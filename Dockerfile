@@ -1,4 +1,3 @@
-
 ############################################################
 # Dockerfile to build ">Y< GNUnet" compile & deploy image.
 #
@@ -21,13 +20,13 @@
 # SPDX-License-Identifier: AGPL3.0-or-later
 ############################################################
 
-FROM debian:bullseye AS builder
+FROM debian:bookworm AS builder
 
 LABEL maintainer="Bernd Fix <brf@hoi-polloi.org>"
 
-ENV MHTTP_VERSION v0.9.75
-ENV GNUNET_VERSION v0.19.3
-ENV GNUNET_GTK_VERSION v0.19.2-1
+ENV MHTTP_VERSION v0.9.77
+ENV GNUNET_VERSION v0.20.0
+ENV GNUNET_GTK_VERSION v0.20.0
 
 ENV GNUNET_PREFIX  /opt/gnunet
 
@@ -79,6 +78,7 @@ RUN \
 		openssl \
 		python3-sphinx \
 		python3-sphinx-rtd-theme \
+        python3-sphinx-book-theme \
 		python3-zbar \
 		recutils \
 		texinfo \
